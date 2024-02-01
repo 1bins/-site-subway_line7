@@ -1,14 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import './assets/subway.css';
 
 import Map from './components/Map'
+import ArrInfo from './components/ArrInfo';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const [station, setStation] = useState('석남');
-
-  const intervalRef = useRef(null);
+  const [updateTime, setUpdateTime] = useState();
+  const [arrivalMsg, setArrivalMsg] = useState({
+    upLine: null,
+    upLine2: null,
+    downLine: null,
+    downLine2: null
+  })
 
   // station 바꾸면 실행될 함수
   useEffect(() => {
@@ -23,16 +29,24 @@ function App() {
       let upLine = lineNumb.filter(elem => elem.updnLine === '상행');
       let downLine = lineNumb.filter(elem => elem.updnLine === '하행');
 
-      console.log(upLine)
+      setArrivalMsg({
+        upLine: upLine[0].arvlMsg2,
+        upLine2: upLine[1].arvlMsg2,
+        downLine: downLine[0].arvlMsg2,
+        downLine2: downLine[1].arvlMsg2,
+      });
+
+      setUpdateTime((upLine[0].recptnDt).substr(11))
     }
     
-    getSubway('가산디지털단지');
+    getSubway(station);
 
   }, [station, API_KEY])
 
   return (
     <div className="App">
-      <Map setStation={setStation}></Map>
+      <Map station={station} setStation={setStation}></Map>
+      <ArrInfo station={station} arrivalMsg={arrivalMsg} updateTime={updateTime}></ArrInfo>
     </div>
   );
 }

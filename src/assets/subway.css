@@ -1,5 +1,9 @@
-* {
-    font-size: 1.8rem;
-    text-align: center;
+#map {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 8px;
 }
 .station-point {cursor: pointer;}
+.station-point .station-name {
+    font-size: 1.6rem;
+}

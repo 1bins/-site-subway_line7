@@ -1,4 +1,4 @@
-const Station = ({ id, name, onClick }) => {
+const Station = ({ id, name, onClick, clickedStation }) => {
     return(
         <div className="station-point" onClick={() => {onClick(name)}}>
             <i className="circle"></i>
