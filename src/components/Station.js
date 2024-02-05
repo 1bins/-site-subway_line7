@@ -1,10 +1,12 @@
+import React from "react";
+
 const Station = ({ id, name, onClick, clickedStation }) => {
     return(
-        <div className="station-point" onClick={() => {onClick(name)}}>
+        <div className={["station-point", clickedStation].join(" ")} onClick={() => {onClick(name)}}>
             <i className="circle"></i>
-            <span className="station-name">{name}</span>
+            <span className="station-name">{name}<i className="deco"></i></span>
         </div>
     )
 }
 
-export default Station;
+export default React.memo(Station);

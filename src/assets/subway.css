@@ -1,9 +1,213 @@
+:root {
+    --line7: #5f5a00;
+}
+h1 {
+    width: 70px; height: 55px;
+    margin: 23px auto 0;
+    background: url(/src/assets/logo.jpg) no-repeat center/contain;
+    text-indent: -9999px;
+    overflow: hidden;
+}
 #map {
+    position: absolute;
+    top: 47%; left: 50%; transform: translate(-50%, -50%);
+    width: 1280px;
+    padding: 50px 68px;
+}
+#map .line {
+    position: absolute;
+    top: 54px; left: 50%; transform: translateX(-50%);
+    width: calc(100% - 146px); height: 6px;
+    background: var(--line7);
+    border-radius: 10px;
+    z-index: -1;
+}
+#map .line2 {top: 142px;}
+#map .line3 {top: 230px;}
+#map .line4 {top: 318px;}
+#map .line5 {top: 406px;}
+#map .line6 {top: 494px;}
+#map .line7 {
+    transform: translateX(0);
+    top: 582px; left: 72px;
+    width: 664px;
+}
+#map .line_vt {
+    position: absolute;
+    top: 54px; right: 70px;
+    width: 6px; height: 94px;
+    background: var(--line7);
+    border-radius: 10px;
+    z-index: -1;
+}
+#map .line_vt:nth-child(2n) {right: auto; left: 70px;}
+#map .line_vt:nth-child(2) {top: 142px;}
+#map .line_vt:nth-child(3) {top: 230px;}
+#map .line_vt:nth-child(4) {top: 318px;}
+#map .line_vt:nth-child(5) {top: 406px;}
+#map .line_vt:nth-child(6) {top: 494px;}
+
+.station-lists {
     display: flex;
     flex-wrap: wrap;
-    gap: 3px 8px;
+    gap: 52px 0;
 }
-.station-point {cursor: pointer;}
+.station-point {
+    position: relative;
+    padding-top: 20px;
+    width: 140px;
+    cursor: pointer;
+    text-align: center;
+}
+.station-point .circle {
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 15px; height: 15px;
+    background: #fff;
+    border: 1px solid var(--line7);
+    border-radius: 100%;
+}
+.station-point.true .circle {
+    width: 24px; height: 24px;
+    top: -6px;
+    transition: all .5s;
+    background: var(--line7);
+    border-color: #fff;
+}
 .station-point .station-name {
+    position: relative;
     font-size: 1.6rem;
 }
+.station-point .station-name .deco {
+    position: absolute;
+    bottom: -1px; left: 50%;
+    width: 106%; height: 10px;
+    background: var(--line7);
+    opacity: .24;
+    transform-origin: left;
+    transform: translateX(-50%) scale(0);
+}
+.station-point.true .station-name {font-weight: 700;}
+.station-point.true .station-name .deco {
+    transform: translateX(-50%) scale(1);
+    transition: all .5s;
+}
+
+.station-point:nth-child(1){order: 53}
+.station-point:nth-child(2){order: 52}
+.station-point:nth-child(3){order: 51}
+.station-point:nth-child(4){order: 50}
+.station-point:nth-child(5){order: 49}
+.station-point:nth-child(6){order: 41}
+.station-point:nth-child(7){order: 42}
+.station-point:nth-child(8){order: 43}
+.station-point:nth-child(9){order: 44}
+.station-point:nth-child(10){order: 45}
+.station-point:nth-child(11){order: 46}
+.station-point:nth-child(12){order: 47}
+.station-point:nth-child(13){order: 48}
+.station-point:nth-child(14){order: 40}
+.station-point:nth-child(15){order: 39}
+.station-point:nth-child(16){order: 38}
+.station-point:nth-child(17){order: 37}
+.station-point:nth-child(18){order: 36}
+.station-point:nth-child(19){order: 35}
+.station-point:nth-child(20){order: 34}
+.station-point:nth-child(21){order: 33}
+.station-point:nth-child(22){order: 25}
+.station-point:nth-child(23){order: 26}
+.station-point:nth-child(24){order: 27}
+.station-point:nth-child(25){order: 28}
+.station-point:nth-child(26){order: 29}
+.station-point:nth-child(27){order: 30}
+.station-point:nth-child(28){order: 31}
+.station-point:nth-child(29){order: 32}
+.station-point:nth-child(30){order: 24}
+.station-point:nth-child(31){order: 23}
+.station-point:nth-child(32){order: 22}
+.station-point:nth-child(33){order: 21}
+.station-point:nth-child(34){order: 20}
+.station-point:nth-child(35){order: 19}
+.station-point:nth-child(36){order: 18}
+.station-point:nth-child(37){order: 17}
+.station-point:nth-child(38){order: 9}
+.station-point:nth-child(39){order: 10}
+.station-point:nth-child(40){order: 11}
+.station-point:nth-child(41){order: 12}
+.station-point:nth-child(42){order: 13}
+.station-point:nth-child(43){order: 14}
+.station-point:nth-child(44){order: 15}
+.station-point:nth-child(45){order: 16}
+.station-point:nth-child(46){order: 8}
+.station-point:nth-child(47){order: 7}
+.station-point:nth-child(48){order: 6}
+.station-point:nth-child(49){order: 5}
+.station-point:nth-child(50){order: 4}
+.station-point:nth-child(51){order: 3}
+.station-point:nth-child(52){order: 2}
+.station-point:nth-child(53){order: 1}
+
+
+#arrInfo {
+    position: absolute;
+    bottom: 0; left: 50%; transform: translateX(-50%);
+    padding: 15px 0;
+    width: 860px;
+    border-top: 1px solid #eee;
+}
+#arrInfo .upper .stations {
+    display: flex;
+    padding: 5px 17px;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--line7);
+    border-radius: 8px;
+}
+#arrInfo .upper .stations :is(.prev-station, .next-station) {
+    font-size: 1.5rem; color: #fff;
+    font-weight: 300;
+    cursor: pointer;
+}
+#arrInfo .upper .stations .this-station {
+    position: absolute;
+    min-width: 120px; line-height: 34px;
+    padding: 0 18px;
+    top: 9px; left: 50%; transform: translateX(-50%);
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: #fff;
+    border: 2px solid var(--line7);
+    border-radius: 24px;
+    text-align: center;
+}
+#arrInfo .upper .time-wrap {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+#arrInfo .upper .time-wrap .time {
+    order: 2;
+    font-size: 1.4rem; color: #666;
+}
+#arrInfo .upper .time-wrap .btn-reload {
+    order: 1;
+    width: 26px; height: 26px;
+    margin-left: 6px;
+    background: #fff url(/src/assets/rotate-right-solid.svg) no-repeat center/14px;
+    border: 1px solid #a6a6a6;
+    border-radius: 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+#arrInfo .lower {
+    display: flex;
+    justify-content: space-between;
+}
+#arrInfo .lower :is(.upLine, .donwLine) {width: 50%;}
+#arrInfo .lower .direction {
+    margin-bottom: 10px;
+    font-size: 1.7rem; color: #666;
+}
+#arrInfo .lower .message {font-size: 1.5rem;}
+#arrInfo .lower .message:last-child {margin-top: 5px;}
