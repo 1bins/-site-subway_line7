@@ -32,6 +32,7 @@
 <img src="./public/subWayLine7/station.png" width="100%">
 <blockquote>부모 컴포넌트인 Map에서 onClick={setStation}으로 station의 상태를 변화해주는 함수를 받아왔고, 클릭을 했을 때 station에 name값을 전달하게 하였습니다.
 <br/>또한 클릭이 발생했을 때 현재 클릭한 역을 알려주기 위해 현재 클릭한 역 name과 station에 설정된 state가 같을 경우 true를 반환하는 clickedStation을 만들어 class에 전달게 하였습니다.</blockquote>
+<br/>
 
 ### ArrInfo 컴포넌트
 <img src="./public/subWayLine7/arrInfo_1.png" width="100%">
