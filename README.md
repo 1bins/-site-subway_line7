@@ -3,7 +3,7 @@
 <br/>
 
 # 지하철 7호선 운행 안내 서비스
-<a href="https://wonbin-haru-diary-project.web.app/" title="새 창으로 열기" target="_blank">https://wonbin-haru-diary-project.web.app/</a>
+<a href="http://wbins2.dothome.co.kr/" title="새 창으로 열기" target="_blank">http://wbins2.dothome.co.kr/</a>
 <blockquote>서울 열린데이터 광장 API를 이용하여 만든 지하철 7호선 운행 안내 서비스입니다</blockquote>
 <br/>
 
